@@ -19,7 +19,7 @@
 #define CLOSESOCKET(a) close(a) 
 #endif
 
-#define PRODUCT "SKYline Technical Server"
+#define PRODUCT "Network Server"
 #define VERSION "V3.000 d9"
 #define NEEDREVISION 9
 
