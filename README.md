@@ -8,7 +8,7 @@
 
 改为
 
-#define PRODUCT "Network Server"
+#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
 
 3.删除CMakeCache.txt
 
@@ -20,10 +20,10 @@ The modified section reads.
    
 2. Modify line 22 in “fsd/global.h”.
    
-“#define PRODUCT “SKYline Technical Server”” to #define PRODUCT ”Network Technical Server”
+“#define PRODUCT “SKYline Technical Server”” to #define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
 
 Change it to
 
-#define PRODUCT “Network Server”
+#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
 
 3. Delete CMakeCache.txt.
