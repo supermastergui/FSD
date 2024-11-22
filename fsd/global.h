@@ -19,7 +19,7 @@
 #define CLOSESOCKET(a) close(a) 
 #endif
 
-#define PRODUCT "Network Server"
+#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
 #define VERSION "V3.000 d9"
 #define NEEDREVISION 9
 
