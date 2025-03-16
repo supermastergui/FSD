@@ -397,39 +397,42 @@ void fsd::createinterfaces()
 void fsd::makeconnections()
 {
    configgroup *cgroup=configman->getgroup("connections");
-   if (!cgroup) return;
-   configentry *centry=cgroup->getentry("connectto");
-   if (centry)
-   {
-      /* Connect to the configured servers */
-      int x, nparts=centry->getnparts();
-      for (x=0;x<nparts;x++)
-      {
-		 int portnum=3011;
-		 char *data=centry->getpart(x), *sportnum;
-		 sportnum=strchr(data,':');
-		 if (sportnum)
-		 {
-			int num;
-			if (sscanf(sportnum+1,"%d",&num)==1) portnum=num;
-			*sportnum='\0';
-		 }
-		 if (serverinterface->adduser(data,portnum,NULL)!=1)
-			dolog(L_ERR,"Connection to %s port %d failed!",data,portnum);
-	    else dolog(L_INFO,"Connected to %s port %d",data,portnum);
-      }
+   if (!cgroup) {
+      dolog(L_ERR, "cgroup is null");
+      return;
    }
 
+   configentry *centry=cgroup->getentry("connectto");
+   if (centry) {
+      int x, nparts = centry->getnparts();
+      for (x = 0; x < nparts; x++) {
+         int portnum = 3011;
+         char *data = centry->getpart(x), *sportnum;
+         sportnum = strchr(data, ':');
+         if (sportnum) {
+            int num;
+            if (sscanf(sportnum + 1, "%d", &num) == 1) portnum = num;
+            *sportnum = '\0';
+         }
+         if (serverinterface->adduser(data, portnum, NULL) != 1)
+            dolog(L_ERR, "Connection to %s port %d failed!", data, portnum);
+         else
+            dolog(L_INFO, "Connected to %s port %d", data, portnum);
+      }
+   } else {
+      dolog(L_ERR, "centry is null");
+      return;
+   }
 
-   centry=cgroup->getentry("allowfrom");
-   if (centry)
-   {
+   centry = cgroup->getentry("allowfrom");
+   if (centry) {
       /* Allow the configured servers */
-      int nparts=centry->getnparts(), x;
-      for (x=0;x<nparts;x++)
+      int nparts = centry->getnparts(), x;
+      for (x = 0; x < nparts; x++)
          serverinterface->allow(centry->getpart(x));
-   } else dolog(L_WARNING,
-      "No 'allowfrom' found, allowing everybody on the server port");
+   } else {
+      dolog(L_WARNING, "No 'allowfrom' found, allowing everybody on the server port");
+   }
 
    serverinterface->sendreset();
 }
