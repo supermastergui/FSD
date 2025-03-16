@@ -52,20 +52,20 @@ const char *clcmdnames[]=
 
 const char *errstr[]=
 {
-   "No error",
-   "Callsign in use",
-   "Invalid callsign",
-   "Already registerd",
-   "Syntax error",
-   "Invalid source callsign",
-   "Invalid CID/password",
-   "No such callsign",
-   "No flightplan",
-   "No such weather profile",
-   "Invalid protocol revision",
-   "Requested level too high",
-   "Too many clients connected",
-   "CID/PID was suspended"
+   "[ERROR 00] No Error",
+   "[ERROR 01] Callsign In Use",
+   "[ERROR 02] Invalid Callsign",
+   "[ERROR 03] Already Registerd",
+   "[ERROR 04] Syntax Error",
+   "[ERROR 05] Invalid Source Callsign",
+   "[ERROR 06] Invalid CID/password",
+   "[ERROR 07] No Such Callsign",
+   "[ERROR 08] No FlightPlan",
+   "[ERROR 09] No Such Weather Profile",
+   "[ERROR 10] Invalid Protocol Revision",
+   "[ERROR 11] Requested Level Too High",
+   "[ERROR 12] Too Many Clients Connected",
+   "[ERROR 13] CID/PID Was Suspended"
 };
 
 /* The client user */
