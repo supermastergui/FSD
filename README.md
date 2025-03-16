@@ -1,29 +1,23 @@
-修改的部分为:
+# 修订记录
 
-1.删除".vs"文件夹内所有文件
+### 2024年10月2日 修改记录
 
-2.修改"fsd/global.h"内第22行
+1. 删除了 `.vs` 文件夹下的所有文件。
 
-"#define PRODUCT "SKYline Technical Server"
+2. 删除了 `CMakeCache.txt`文件。
 
-改为
+3. 修改了 `fsd/global.h` 文件的第 22 行，将 `#define PRODUCT “SKYline Technical Server”` 改为 `#define PRODUCT "Network Server"`。
 
-#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
+4. 创建了 `README.md` 其内容为：
 
-3.删除CMakeCache.txt
+5. 修改了 `README.md`文件的第15行，将` `改为`---`。
 
----
+### 2024年11月22日
 
-The modified section reads.
+1. 修改了 `fsd/global.h` 文件的第 22 行，将 `#define PRODUCT “Network Server”` 改为 `#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"`。
 
-1. Delete all files in the “.vs” folder.
-   
-2. Modify line 22 in “fsd/global.h”.
-   
-“#define PRODUCT “SKYline Technical Server”” to #define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
+2. 修改了`README.md`文件，调整排版
 
-Change it to
+### 2025年3月16日
 
-#define PRODUCT "The FSD Open Source https://github.com/supermastergui/FSD"
-
-3. Delete CMakeCache.txt.
+1. 修改了`README.md`文件，调整排版
