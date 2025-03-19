@@ -42,7 +42,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 1. 进入`项目文件夹根目录`
 
    ```sh
-   cd "www/*"
+   cd "www\*"
    ```
 
 2. 创建`Build`文件夹
@@ -71,9 +71,9 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 编译完成后，会在`Build`文件夹内，出现一个"`FSD`"。是的，编译结束的文件没有任何后缀。
 
-### (4) 运行
+### (4) 修改配置
 
-运行FSD需要将`"项目目录下的/Linux"`所有文件，以及编译完成的`"FSD"`，放在一个文件夹内，比如`"FSD_server"`，接下来我们进行文件的配置。
+运行FSD需要将"`项目目录下的\Linux`"所有文件，以及编译完成的"`FSD`"，放在一个文件夹内，比如"`FSD_server`"，接下来我们进行文件的配置。
 
 1. `cert.txt`
 
@@ -355,6 +355,64 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
    - 服务器欢迎语：
      - 必须使用英语，中文会导致swift显示错误。
+     
+
+### (5) 调整文件权限
+
+1. 在"`FSD_server`"文件夹下，先调整为777权限：
+
+   ```sh
+   chmod -R 777 *
+   ```
+
+2. 再调整"`cert.txt`"为775权限：
+
+   ```sh
+   chmod -R cert.txt cert.txt
+   ```
+
+   > [!CAUTION]
+   >
+   > 请必须保管好"`cert.txt`"，使其只有后端才能访问。
+
+### (6) 运行
+
+1. 运行`fsd_d.sh`：
+
+   ```sh
+   ./fsd_d.sh
+   ```
+
+2. （按需）Metar报文获取：
+   一个好的服务器为了方便管制员，当然会提供内置的Metar报文，除非管制全用的是`EuroScope`v3.2.9及以上，带有自动获取报文下载。
+
+   在`宝塔面板`，`计划任务`中
+
+   - `任务类型`：Shell脚本
+
+   - `任务名称`：随便填写
+
+   - `执行周期`：`N分钟`，根据服务器带宽在：3~15分钟更新。
+
+   - `脚本内容`：
+
+     ```shell
+     #!/bin/bash
+     
+     # 获取所有文字
+     text=$(curl -s https://metar.vatsim.net/metar.php?id=ALL)
+     
+     # 将文字保存到文件中
+     echo "${text}" > /www/wwwroot/*/FSD_server/metar.txt # 此处为FSD_server目录
+     ```
+
+### (7) 关闭
+
+1. 运行`killfsd.sh`：
+
+   ```sh
+   ./killfsd.sh
+   ```
 
 ## 三、 主要模块
 
@@ -415,3 +473,4 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 1. 修改了`README.md`文件，调整排版。
 2. 删除了`ALL_BUILD.vcxproj`、`ALL_BUILD.vcxproj.filters`、`fsd.sln`、`fsd.vcxproj`、`fsd.vcxproj.filters`、`ZERO_CHECK.vcxproj`、`ZERO_CHECK.vcxproj.filters`，不再适配Visual Studio。
+3. 更新了`README.md`文件，增加运行和关闭，以及更改权限。
