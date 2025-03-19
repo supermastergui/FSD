@@ -26,40 +26,54 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 ### (1) 前期条件
 
 - CMake
+
 - C++ 编译器
+
 - Windows / Linux
+
+- 放行`6809`、`3011`、`3010`需要去服务器后台放通，TCP协议。
+
+  > [!NOTE]
+  >
+  > 如果服务器为腾讯云且同时装了宝塔面板，需要在腾讯云防火墙和宝塔同时放行。
 
 ### (2) 编译（仅限Linux）
 
-1. 创建`Build`文件夹
+1. 进入`项目文件夹根目录`
+
+   ```sh
+   cd "www/*"
+   ```
+
+2. 创建`Build`文件夹
 
    ```sh
    mkdir build
    ```
 
-2. 移动到`Build`文件夹
+3. 移动到`Build`文件夹
 
    ```sh
    cd build
    ```
 
-3. 生成构建文件：
+4. 生成构建文件：
 
    ```sh
    cmake ..
    ```
 
-4. 编译项目：
+5. 编译项目：
 
    ```sh
    make
    ```
 
-编译完成后，会在`Build`文件夹内，出现一个`FSD`。是的，编译结束的文件没有任何后缀。
+编译完成后，会在`Build`文件夹内，出现一个"`FSD`"。是的，编译结束的文件没有任何后缀。
 
 ### (4) 运行
 
-运行FSD需要将`项目目录下的/Linux`所有文件，以及编译完成的`FSD`，放在一个文件夹内，比如`FSD_server`，接下来我们进行文件的配置。
+运行FSD需要将`"项目目录下的/Linux"`所有文件，以及编译完成的`"FSD"`，放在一个文件夹内，比如`"FSD_server"`，接下来我们进行文件的配置。
 
 1. `cert.txt`
 
@@ -270,14 +284,10 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
      whazzup=whazzup.txt
      ```
 
-     - `clientport`、`serverport`、`systemport`：这些为服务器的端口，默认为`6809`、`3011`、`3010`，需要去服务器后台放通，TCP协议，不推荐修改。
-
-       > [!NOTE]
-       >
-       > 如果服务器为腾讯云且同时装了宝塔面板，需要在两个地方同时放行。
+     - `clientport`、`serverport`、`systemport`：这些为服务器的端口，默认为`6809`、`3011`、`3010`。
 
      - `ident`：服务器的识别码，识别码必须是唯一的（不含空格）。
-
+     
      - `email`：电子邮件，可随便填写一个。
 
      - `name`：服务器的名字，可以有空格
@@ -297,6 +307,8 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
      - `whazzup`：输出`whazzp.txt`文件，不需要更改。
 
    - 连接配置：
+
+     此处为多服务器配置，目前如果使用单服务器保持默认即可。
 
      ```
      [connections]
@@ -342,7 +354,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
    ```
 
    - 服务器欢迎语：
-     - 使用英语，中文会导致swift显示错误。
+     - 必须使用英语，中文会导致swift显示错误。
 
 ## 三、 主要模块
 
@@ -388,9 +400,18 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 ### 2025年3月16日
 
 1. 修改了`README.md`文件，调整排版。
+
 2. 修改了`fsd/cluser.cpp`，增加序号，使用驼峰命名。
+
 3. 删除了`docs/*` 。
+
 4. 修改了`README.md`文件，调整排版。
+
 5. 修改了`fsd\fsd.cpp`文件，修改一些错误。
+
 6. 调整了`README.md`文件，大量修改。
 
+### 2025年3月19日
+
+1. 修改了`README.md`文件，调整排版。
+2. 删除了`ALL_BUILD.vcxproj`、`ALL_BUILD.vcxproj.filters`、`fsd.sln`、`fsd.vcxproj`、`fsd.vcxproj.filters`、`ZERO_CHECK.vcxproj`、`ZERO_CHECK.vcxproj.filters`，不再适配Visual Studio。
