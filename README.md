@@ -478,4 +478,6 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 ### 2025年3月30日
 
 1. 修改了`README.md`文件。
+1. 删除了`.github\workflows\ci.yml`和`.github\workflows\main.yml`。
+1. 增加了`cmake-multi-platform.yml`。
 
