@@ -1,0 +1,44 @@
+name: Build FSD
+
+on:
+  push:
+    branches: [ "main" ]  # 触发分支
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # 使用 Linux 环境
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake
+
+    - name: Create build directory
+      run: |
+        mkdir -p build
+        cd build
+
+    - name: Configure with CMake
+      working-directory: ./build
+      run: cmake ..
+
+    - name: Build project
+      working-directory: ./build
+      run: make -j$(nproc)
+
+    - name: Verify build output
+      run: |
+        ls -l build/FSD
+        file build/FSD
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: FSD-binary
+        path: build/FSD
