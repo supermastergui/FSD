@@ -1,11 +1,11 @@
-# README / 必读文件
+# 📚README / 必读文件
 
-## 一、 项目简介
+## 一、 项目简介🌟
 FSD 是一个用于连接管制和机组的一个后端处理软件，使用FSD V3.000 draft 9协议。受限于FSD V3.000 draft 9协议所致，目前连接设备仅支持`EuroScope`、`Swift`以及`Echo`（未测试，仅推断得出），其余软件譬如：`Vatspy`、`VRC`、`CRC`等均不支持。
 
-FSD V3.000 draft 9协议最初版本的是[kuroneko/fsd](https://github.com/kuroneko/fsd)，项目克隆自：[AFcPPe/FSD-SKYline](https://github.com/AFcPPe/FSD-SKYline)，目前来看这两个项目都已停止维护。
+FSD V3.000 draft 9协议最初版本的是[kuroneko/fsd](https://github.com/kuroneko/fsd)，项目克隆自：[AFcPPe/FSD-SKYline](https://github.com/AFcPPe/FSD-SKYline)，目前来看这两个项目都已停止维护。💤
 
-除此以为，目前还有基于FSD V3.000 draft 9协议的[cfcsim/pyfsd](https://github.com/cfcsim/pyfsd)，它与原版有非常大部分的改动，基本就是完全覆写了一遍，密码存储在数据库。
+除此以为，目前还有基于FSD V3.000 draft 9协议的[cfcsim/pyfsd](https://github.com/cfcsim/pyfsd)，它与原版有非常大部分的改动，基本就是完全覆写了一遍，密码存储在数据库。🔒
 
 FSD主流的协议有三种：FSD V3.000 draft 9、Vatsim协议、Vatsim（token）协议。
 
@@ -17,13 +17,13 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 <img src="./assets/image-20250316165325099.png" alt="image-20250316165325099" style="zoom:50%;" />
 
-总而言之，言而总之，此项目[supermastergui/FSD](https://github.com/supermastergui/FSD)目的就是为了写一个适合懒人的FSD，懒到不想配置数据库，使用明文储存密码（虽然安全性有点欠佳）。
+总而言之，言而总之，此项目[supermastergui/FSD](https://github.com/supermastergui/FSD)目的就是为了写一个适合懒人的FSD，懒到不想配置数据库，使用明文储存密码（虽然安全性有点欠佳⚠️）。
 
 
 
-## 二、 编译和运行
+## 二、 编译和运行🛠️
 
-### (1) 前期条件
+### (1) 前期条件📋
 
 - CMake
 
@@ -37,7 +37,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
   >
   > 如果服务器为腾讯云且同时装了宝塔面板，需要在腾讯云防火墙和宝塔同时放行。
 
-### (2) 编译（仅限Linux）
+### (2) 编译（仅限Linux）🐧
 
 1. 进入`项目文件夹根目录`
 
@@ -71,7 +71,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 编译完成后，会在`Build`文件夹内，出现一个"`FSD`"。是的，编译结束的文件没有任何后缀。
 
-### (4) 修改配置
+### (4) 修改配置⚙️
 
 运行FSD需要将"`项目目录下的\Linux`"所有文件，以及编译完成的"`FSD`"，放在一个文件夹内，比如"`FSD_server`"，接下来我们进行文件的配置。
 
@@ -357,7 +357,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
      - 必须使用英语，中文会导致swift显示错误。
      
 
-### (5) 调整文件权限
+### (5) 调整文件权限📝
 
 1. 在"`FSD_server`"文件夹下，先调整为777权限：
 
@@ -375,7 +375,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
    >
    > 请必须保管好"`cert.txt`"，使其只有后端才能访问。
 
-### (6) 运行
+### (6) 运行📝
 
 1. 运行`fsd_d.sh`：
 
@@ -406,7 +406,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
      echo "${text}" > /www/wwwroot/*/FSD_server/metar.txt # 此处为FSD_server目录
      ```
 
-### (7) 关闭
+### (7) 关闭🛑
 
 1. 运行`killfsd.sh`：
 
@@ -414,7 +414,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
    ./killfsd.sh
    ```
 
-## 三、 主要模块
+## 三、 主要模块🧩
 
 - `fsd.cpp`：主程序文件，包含服务器启动、配置和管理的主要逻辑。
 - `authenticate.c`：处理用户认证。
@@ -425,11 +425,11 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 - `manage.cpp`：管理模块。
 - `mm.cpp`：METAR 管理模块。
 
-## 四、 贡献
+## 四、 贡献🤝
 
 欢迎贡献代码！请提交 [Pull Request](https://github.com/supermastergui/FSD/pulls) 或报告 [Issue](https://github.com/supermastergui/FSD/issues)。
 
-## 五、 许可证
+## 五、 许可证📜
 
 该项目使用 [GNU 通用公共许可证](LICENSE) 与源项目相同。
 
@@ -437,7 +437,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 基于[GNU 通用公共许可证](LICENSE)，因此，该项目的衍生品需要开源且展示所有更改的部分。
 
-### 2024年10月2日 修改记录
+### 2024年10月2日 修改记录📅
 
 1. 删除了 `.vs` 文件夹下的所有文件。
 
@@ -474,3 +474,8 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 1. 修改了`README.md`文件，调整排版。
 2. 删除了`ALL_BUILD.vcxproj`、`ALL_BUILD.vcxproj.filters`、`fsd.sln`、`fsd.vcxproj`、`fsd.vcxproj.filters`、`ZERO_CHECK.vcxproj`、`ZERO_CHECK.vcxproj.filters`，不再适配Visual Studio。
 3. 更新了`README.md`文件，增加运行和关闭，以及更改权限。
+
+### 2025年3月30日
+
+1. 修改了`README.md`文件。
+
