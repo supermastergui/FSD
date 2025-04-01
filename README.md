@@ -1,6 +1,6 @@
 # 📚README / 必读文件
 
-![协议徽章](https://img.shields.io/github/license/supermastergui/FSD)![Action徽章](https://github.com/supermastergui/FSD/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=master)![Release徽章](https://badgen.net/github/release/supermastergui/FSD/stable)
+![协议徽章](https://img.shields.io/github/license/supermastergui/FSD) ![Action徽章](https://github.com/supermastergui/FSD/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=master) ![Release徽章](https://badgen.net/github/release/supermastergui/FSD/stable)
 
 ## 一、 项目简介🌟
 FSD 是一个用于连接管制和机组的一个后端处理软件，使用FSD V3.000 draft 9协议。受限于FSD V3.000 draft 9协议所致，目前连接设备仅支持`EuroScope`、`Swift`以及`Echo`（未测试，仅推断得出），其余软件譬如：`Vatspy`、`VRC`、`CRC`等均不支持。
