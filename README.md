@@ -3,11 +3,13 @@
 ![协议徽章](https://img.shields.io/github/license/supermastergui/FSD) ![Action徽章](https://github.com/supermastergui/FSD/actions/workflows/cmake-multi-platform.yml/badge.svg?branch=master) ![Release徽章](https://badgen.net/github/release/supermastergui/FSD/stable)
 
 ## 一、 项目简介🌟
-FSD 是一个用于连接管制和机组的一个后端处理软件，使用FSD V3.000 draft 9协议。受限于FSD V3.000 draft 9协议所致，目前连接设备仅支持`EuroScope`、`Swift`以及`Echo`（未测试，仅推断得出），其余软件譬如：`Vatspy`、`VRC`、`CRC`等均不支持。
+FSD（**Flight Simulation Device**） 是一个用于连接管制和机组的一个后端处理软件，使用FSD V3.000 draft 9协议。受限于FSD V3.000 draft 9协议所致，目前连接设备仅支持`EuroScope`、`Swift`以及`Echo`（未测试，仅推断得出），其余软件譬如：`Vatspy`、`VRC`、`CRC`等均不支持。
 
-FSD V3.000 draft 9协议最初版本的是[kuroneko/fsd](https://github.com/kuroneko/fsd)，项目克隆自：[AFcPPe/FSD-SKYline](https://github.com/AFcPPe/FSD-SKYline)，目前来看这两个项目都已停止维护。💤
+FSD V3.000 draft 9协议最初版本的是[kuroneko/fsd](https://github.com/kuroneko/fsd)，后续改动版本有：
 
-除此以为，目前还有基于FSD V3.000 draft 9协议的[cfcsim/pyfsd](https://github.com/cfcsim/pyfsd)，它与原版有非常大部分的改动，基本就是完全覆写了一遍，密码存储在数据库。🔒
+- [cfcsim/pyfsd](https://github.com/cfcsim/pyfsd)，编程语言：Python，特点：基本覆写了一遍、密码存储在数据库。
+- [AFcPPe/FSD-SKYline](https://github.com/AFcPPe/FSD-SKYline)，编程语言：C++、C，特点：支持计划同步。
+- [AFcPPe/AdvancedFlightServer-Golang](https://github.com/AFcPPe/AdvancedFlightServer-Golang)，编程语言：Go，特点：密码存储在数据库，支持计划同步。
 
 FSD主流的协议有三种：FSD V3.000 draft 9、Vatsim协议、Vatsim（token）协议。
 
@@ -19,7 +21,7 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 
 <img src="./assets/image-20250316165325099.png" alt="image-20250316165325099" style="zoom:50%;" />
 
-总而言之，言而总之，此项目[supermastergui/FSD](https://github.com/supermastergui/FSD)目的就是为了写一个适合懒人的FSD，懒到不想配置数据库，使用明文储存密码（虽然安全性有点欠佳⚠️）。
+总而言之，言而总之，此项目[supermastergui/FSD](https://github.com/supermastergui/FSD)，本项目克隆自：[AFcPPe/FSD-SKYline](https://github.com/AFcPPe/FSD-SKYline)。目的就是为了写一个适合懒人的FSD，懒到不想配置数据库，使用明文储存密码（⚠️虽然安全性有点欠佳）。
 
 
 
@@ -483,7 +485,11 @@ Vatsim协议是指在`EuroScope`中，出现下图的第一个图标。
 1. 删除了`.github\workflows\ci.yml`和`.github\workflows\main.yml`。
 1. 增加了`cmake-multi-platform.yml`。
 
-### 202年4月1日
+### 2024年4月1日
 
 1. 修改了`README.md`文件，增加了github徽章。
+
+### 2024年4月5日
+
+1. 修改了`README.md`文件，调整排版。
 
